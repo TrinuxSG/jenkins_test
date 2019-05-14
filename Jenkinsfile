@@ -1,9 +1,21 @@
 pipeline {
-  agent any
-  stages {
-    stage('Stage 1') {
-      steps {
-        println BUILD_NUMBER
-      }
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
-  }
+}
