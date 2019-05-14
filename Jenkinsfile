@@ -4,7 +4,13 @@ pipeline {
     stages {
         stage('First Step') {
             steps {
-                def causes = currentBuild.rawBuild.getAction(hudson.model.CauseAction)
+                script {
+                GIT_COMMIT_HASH = sh "(git log -n 1 --pretty=format:'%H')"
+
+                echo "**************************************************"
+                echo "${GIT_COMMIT_HASH}"
+                echo "**************************************************"
+    }
             }
         }
     }
