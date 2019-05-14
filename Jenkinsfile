@@ -4,8 +4,7 @@ pipeline {
     stages {
         stage('First Step') {
             steps {
-                echo BUILD_NUMBER
-                currentBuild.rawBuild.getActions()
+                def causes = currentBuild.rawBuild.getAction(hudson.model.CauseAction)
             }
         }
     }
