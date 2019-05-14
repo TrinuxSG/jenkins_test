@@ -4,7 +4,7 @@ pipeline {
         stage('First Step') {
             steps {
                 script {
-            echo currentBuild.changeSets
+            echo Arrays.toString(currentBuild.changeSets.toArray())
         }
     }
 }
