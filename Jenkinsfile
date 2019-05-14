@@ -8,7 +8,7 @@ pipeline {
                 echo "**************************************************"
                 echo "${GIT_COMMIT_HASH}"
                 echo "**************************************************"
-                    echo "${GIT_COMMIT}"
+                    writer.println System.getenv('GIT_CHANGES')
                 }
             }
         }
