@@ -5,6 +5,7 @@ pipeline {
             steps {
                 script {
                     def changes = currentBuild.changeSets[0].collect {"${it.commitId}: ${it.msg}"} .join("\n")
+                    echo changes
                 def changeLogSets = currentBuild.changeSets
 for (int i = 0; i < changeLogSets.size(); i++) {
     def entries = changeLogSets[i].items
