@@ -4,7 +4,8 @@ pipeline {
         stage('First Step') {
             steps {
                 script {
-            echo currentBuild.changeSets.size()
+                    def i = currentBuild.changeSets.size()
+            echo i
         }
     }
 }
